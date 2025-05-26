@@ -1,0 +1,129 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the start for longer content */
+    min-height: 100vh;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: row; /* Canvas on left, UI on right */
+    align-items: flex-start; /* Align items to the top */
+    gap: 20px; /* Space between canvas and UI container */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#ludo-board {
+    border: 2px solid #333; /* Distinct border already drawn by canvas, this is a fallback/enhancement */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    /* Dimensions are set in JS, so no width/height here */
+}
+
+#ui-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between UI elements */
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    min-width: 200px; /* Ensure UI container has some width */
+}
+
+#player-info {
+    background-color: #e7f3fe;
+    border: 1px solid #b3d7ff;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    color: #333;
+    text-align: center;
+    min-height: 60px; /* To accommodate two lines of text comfortably */
+    line-height: 1.4;
+}
+
+#dice-area {
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    padding: 15px; /* Increased padding */
+    text-align: center;
+    margin-top: 0; /* margin-top was 10px, now handled by gap in ui-container */
+    font-size: 1.5em; /* Increased font size */
+    font-weight: bold;
+    color: #856404;
+    border-radius: 5px;
+}
+
+#roll-dice-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+}
+
+#roll-dice-btn:hover {
+    background-color: #218838;
+}
+
+#roll-dice-btn:active {
+    background-color: #1e7e34;
+    transform: translateY(1px);
+}
+
+#save-game-btn {
+    background-color: #007bff; /* Blue */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#save-game-btn:hover {
+    background-color: #0069d9;
+}
+
+#toggle-music-btn {
+    background-color: #6c757d; /* Gray */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#toggle-music-btn:hover {
+    background-color: #5a6268;
+}
+
+/* General Typography - already set on body */
+
+/* Ensure canvas is not overly dominant if screen is small, though fixed size is typical for canvas games */
+@media (max-width: 900px) { /* Approx board size + UI width + padding */
+    #game-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    #ui-container {
+        width: 100%;
+        max-width: 600px; /* Match canvas width if stacked */
+    }
+}

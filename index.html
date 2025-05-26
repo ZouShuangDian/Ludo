@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludo Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="ludo-board"></canvas>
+        <div id="ui-container">
+            <div id="player-info"></div>
+            <div id="dice-area"></div>
+            <button id="roll-dice-btn">Roll Dice</button>
+            <button id="save-game-btn">Save Game</button>
+            <button id="toggle-music-btn">Play Music</button> <!-- Added Music Toggle Button -->
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="dice-roll-sound" src="sounds/dice-roll.mp3" preload="auto"></audio>
+    <audio id="piece-move-sound" src="sounds/piece-move.mp3" preload="auto"></audio>
+    <audio id="piece-capture-sound" src="sounds/piece-capture.mp3" preload="auto"></audio>
+    <audio id="win-game-sound" src="sounds/win-game.mp3" preload="auto"></audio>
+    <audio id="background-music" src="sounds/background-music.mp3" loop preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
